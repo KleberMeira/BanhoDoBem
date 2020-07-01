@@ -5,7 +5,7 @@
 	    <meta charset="UTF-8">
 	    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-	    <title>QHelp - Página inicial</title>
+	    <title>Portal - Time do Bem</title>
 	
 	    <!-- CSS -->
 	    <link rel="stylesheet" href="<?php echo asset('css/reset.css') ?>" type="text/css">
