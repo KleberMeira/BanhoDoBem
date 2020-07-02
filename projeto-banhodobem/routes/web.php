@@ -17,9 +17,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/listagem', function () {
-    return view('listagem');
-});
+Route::get('/listagem', 'UsuarioController@index')->name('listagem');
+
+Route::resource('/listagem', 'UsuarioController');
 
 Route::get('/cadastro', function () {
     return view('cadastro');
