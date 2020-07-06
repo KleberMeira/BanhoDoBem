@@ -16,7 +16,7 @@
 
                     
                     <div class="text-center mt-3 mb-4">
-                        <a href="">
+                    <a href="{{url('cadastro')}}">
                             <button class="btn btn-success">Cadastrar Familia</button>
                     </div>
 
