@@ -4,7 +4,6 @@ import java.util.Date;
 
 public class Pessoa {
 
-
     private Integer id;
     private Integer idCadastro;
     private String nomeComunidade;
@@ -18,6 +17,19 @@ public class Pessoa {
     private Integer telefone;
     private Integer telRecado;
     private String respRecado;
+
+    public Pessoa(Integer id, String nome) {
+        this.id = id;
+        this.nome = nome;
+    }
+
+    public Pessoa(){
+    }
+
+    public Pessoa(String nome){
+        this.nome = nome;
+    }
+
 
     public Integer getId() {
         return id;
@@ -139,4 +151,11 @@ public class Pessoa {
     respRecado varchar(100)
      */
 
+    @Override
+    public String toString() {
+        return "Pessoa{" +
+                "id=" + id +
+                ", nome='" + nome + '\'' +
+                '}';
+    }
 }
