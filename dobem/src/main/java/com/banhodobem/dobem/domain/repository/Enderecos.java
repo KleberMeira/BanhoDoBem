@@ -1,4 +1,12 @@
 package com.banhodobem.dobem.domain.repository;
 
-public interface Enderecos {
+
+import com.banhodobem.dobem.domain.entity.Endereco;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface Enderecos extends JpaRepository<Endereco, Integer> {
+
+
+
+
 }

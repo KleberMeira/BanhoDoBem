@@ -1,7 +1,9 @@
 package com.banhodobem.dobem.domain.entity;
 
 import javax.persistence.*;
+import java.time.LocalDate;
 import java.util.Date;
+import java.util.Set;
 
 @Entity
 @Table(name = "pessoa")
@@ -22,7 +24,7 @@ public class Pessoa {
     private String nome;
 
     @Column(name = "dataNascimento")
-    private Date dataNascimento;
+    private LocalDate dataNascimento;
 
     @Column(name = "idade", length = 4)
     private Integer idade;
@@ -93,11 +95,11 @@ public class Pessoa {
         this.nome = nome;
     }
 
-    public Date getDataNascimento() {
+    public LocalDate getDataNascimento() {
         return dataNascimento;
     }
 
-    public void setDataNascimento(Date dataNascimento) {
+    public void setDataNascimento(LocalDate dataNascimento) {
         this.dataNascimento = dataNascimento;
     }
 
@@ -163,6 +165,28 @@ public class Pessoa {
 
     public void setRespRecado(String respRecado) {
         this.respRecado = respRecado;
+    }
+
+    @OneToMany(mappedBy = "idPessoaInteresse")
+    private Set<Interesse> interesses;
+
+    @OneToMany(mappedBy = "idPessoa")
+    private Set<Endereco> enderecos;
+
+    public Set<Interesse> getInteresses() {
+        return interesses;
+    }
+
+    public void setInteresses(Set<Interesse> interesses) {
+        this.interesses = interesses;
+    }
+
+    public Set<Endereco> getEnderecos() {
+        return enderecos;
+    }
+
+    public void setEnderecos(Set<Endereco> enderecos) {
+        this.enderecos = enderecos;
     }
 
     /*

@@ -20,11 +20,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d90230b3-52c2-4776-a3aa-a7b512858ebf" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/dobem/src/main/java/com/banhodobem/dobem/domain/repository/Enderecos.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dobem/src/main/java/com/banhodobem/dobem/domain/repository/Pessoas.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dobem/src/main/java/com/banhodobem/dobem/ProjetoDobemApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/dobem/src/main/java/com/banhodobem/dobem/ProjetoDobemApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dobem/src/main/java/com/banhodobem/dobem/domain/entity/Endereco.java" beforeDir="false" afterPath="$PROJECT_DIR$/dobem/src/main/java/com/banhodobem/dobem/domain/entity/Endereco.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dobem/src/main/java/com/banhodobem/dobem/domain/entity/Interesse.java" beforeDir="false" afterPath="$PROJECT_DIR$/dobem/src/main/java/com/banhodobem/dobem/domain/entity/Interesse.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dobem/src/main/java/com/banhodobem/dobem/domain/entity/Pessoa.java" beforeDir="false" afterPath="$PROJECT_DIR$/dobem/src/main/java/com/banhodobem/dobem/domain/entity/Pessoa.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dobem/src/main/java/com/banhodobem/dobem/domain/repositorio/Pessoas.java" beforeDir="false" afterPath="$PROJECT_DIR$/dobem/src/main/java/com/banhodobem/dobem/domain/repositorio/Pessoas.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dobem/src/main/resources/schema.sql" beforeDir="false" afterPath="$PROJECT_DIR$/dobem/src/main/resources/meu_schema.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dobem/src/main/java/com/banhodobem/dobem/domain/repositorio/Pessoas.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dobem/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/dobem/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dobem/src/main/resources/meu_schema.sql" beforeDir="false" afterPath="$PROJECT_DIR$/dobem/src/main/resources/meu_schema.sql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,6 +41,7 @@
       <list>
         <option value="AnnotationType" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -105,7 +111,7 @@
       <workItem from="1594874024800" duration="2171000" />
       <workItem from="1595204291145" duration="7945000" />
       <workItem from="1595286469191" duration="16000" />
-      <workItem from="1595371082287" duration="4670000" />
+      <workItem from="1595371082287" duration="10708000" />
     </task>
     <servers />
   </component>
@@ -132,53 +138,53 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="835" y="384" key="#Assign_Data_Sources/0.0.1920.1040/1920.0.1440.860@0.0.1920.1040" timestamp="1594770558071" />
-    <state x="718" y="146" key="#com.intellij.ide.util.MemberChooser" timestamp="1595210951878">
+    <state x="718" y="146" key="#com.intellij.ide.util.MemberChooser" timestamp="1595373072995">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="718" y="146" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040/1920.0.1440.860@0.0.1920.1040" timestamp="1595210951878" />
+    <state x="718" y="146" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040/1920.0.1440.860@0.0.1920.1040" timestamp="1595373072995" />
     <state x="572" y="307" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1595371459612">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="572" y="307" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1920.1040/1920.0.1440.860@0.0.1920.1040" timestamp="1595371459612" />
-    <state width="1865" height="386" key="GridCell.Tab.0.bottom" timestamp="1595375414110">
+    <state width="1865" height="537" key="GridCell.Tab.0.bottom" timestamp="1595371041432">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1865" height="386" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1440.860@0.0.1920.1040" timestamp="1595375414110" />
+    <state width="1865" height="537" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1440.860@0.0.1920.1040" timestamp="1595371041432" />
     <state width="1385" height="266" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1440.860@1920.0.1440.860" timestamp="1594772147286" />
-    <state width="1865" height="386" key="GridCell.Tab.0.center" timestamp="1595375414110">
+    <state width="1865" height="537" key="GridCell.Tab.0.center" timestamp="1595371041432">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1865" height="386" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1440.860@0.0.1920.1040" timestamp="1595375414110" />
+    <state width="1865" height="537" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1440.860@0.0.1920.1040" timestamp="1595371041432" />
     <state width="1385" height="266" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1440.860@1920.0.1440.860" timestamp="1594772147286" />
-    <state width="1865" height="386" key="GridCell.Tab.0.left" timestamp="1595375414110">
+    <state width="1865" height="537" key="GridCell.Tab.0.left" timestamp="1595371041432">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1865" height="386" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1440.860@0.0.1920.1040" timestamp="1595375414110" />
+    <state width="1865" height="537" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1440.860@0.0.1920.1040" timestamp="1595371041432" />
     <state width="1385" height="266" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1440.860@1920.0.1440.860" timestamp="1594772147285" />
-    <state width="1865" height="386" key="GridCell.Tab.0.right" timestamp="1595375414110">
+    <state width="1865" height="537" key="GridCell.Tab.0.right" timestamp="1595371041432">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1865" height="386" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1440.860@0.0.1920.1040" timestamp="1595375414110" />
+    <state width="1865" height="537" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1440.860@0.0.1920.1040" timestamp="1595371041432" />
     <state width="1385" height="266" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1440.860@1920.0.1440.860" timestamp="1594772147286" />
-    <state width="1865" height="386" key="GridCell.Tab.1.bottom" timestamp="1595375414110">
+    <state width="1865" height="537" key="GridCell.Tab.1.bottom" timestamp="1595371041432">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1865" height="386" key="GridCell.Tab.1.bottom/0.0.1920.1040/1920.0.1440.860@0.0.1920.1040" timestamp="1595375414110" />
+    <state width="1865" height="537" key="GridCell.Tab.1.bottom/0.0.1920.1040/1920.0.1440.860@0.0.1920.1040" timestamp="1595371041432" />
     <state width="1385" height="266" key="GridCell.Tab.1.bottom/0.0.1920.1040/1920.0.1440.860@1920.0.1440.860" timestamp="1594772147287" />
-    <state width="1865" height="386" key="GridCell.Tab.1.center" timestamp="1595375414110">
+    <state width="1865" height="537" key="GridCell.Tab.1.center" timestamp="1595371041432">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1865" height="386" key="GridCell.Tab.1.center/0.0.1920.1040/1920.0.1440.860@0.0.1920.1040" timestamp="1595375414110" />
+    <state width="1865" height="537" key="GridCell.Tab.1.center/0.0.1920.1040/1920.0.1440.860@0.0.1920.1040" timestamp="1595371041432" />
     <state width="1385" height="266" key="GridCell.Tab.1.center/0.0.1920.1040/1920.0.1440.860@1920.0.1440.860" timestamp="1594772147286" />
-    <state width="1865" height="386" key="GridCell.Tab.1.left" timestamp="1595375414110">
+    <state width="1865" height="537" key="GridCell.Tab.1.left" timestamp="1595371041432">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1865" height="386" key="GridCell.Tab.1.left/0.0.1920.1040/1920.0.1440.860@0.0.1920.1040" timestamp="1595375414110" />
+    <state width="1865" height="537" key="GridCell.Tab.1.left/0.0.1920.1040/1920.0.1440.860@0.0.1920.1040" timestamp="1595371041432" />
     <state width="1385" height="266" key="GridCell.Tab.1.left/0.0.1920.1040/1920.0.1440.860@1920.0.1440.860" timestamp="1594772147286" />
-    <state width="1865" height="386" key="GridCell.Tab.1.right" timestamp="1595375414110">
+    <state width="1865" height="537" key="GridCell.Tab.1.right" timestamp="1595371041432">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1865" height="386" key="GridCell.Tab.1.right/0.0.1920.1040/1920.0.1440.860@0.0.1920.1040" timestamp="1595375414110" />
+    <state width="1865" height="537" key="GridCell.Tab.1.right/0.0.1920.1040/1920.0.1440.860@0.0.1920.1040" timestamp="1595371041432" />
     <state width="1385" height="266" key="GridCell.Tab.1.right/0.0.1920.1040/1920.0.1440.860@1920.0.1440.860" timestamp="1594772147287" />
     <state width="1865" height="330" key="GridCell.Tab.2.bottom" timestamp="1595215000081">
       <screen x="0" y="0" width="1920" height="1040" />

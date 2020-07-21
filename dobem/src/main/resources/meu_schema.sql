@@ -19,6 +19,7 @@ CREATE TABLE ENDERECO(
 
  id integer primary key auto_increment,
  idPessoa integer references PESSOA(id),
+ idInteresse integer references INTERESSE(id),
  cep integer(20),
  rua varchar (40),
  bairro varchar(40),
@@ -30,8 +31,9 @@ CREATE TABLE INTERESSE(
 
  id integer primary key auto_increment,
  idPessoaInteresse integer references PESSOA(id),
+ idInteresse integer references ENDERECO(id)
  palestra varchar (40),
  artesanato varchar(40),
- outro integer(5)
+ outro varchar (40)
 );
 

@@ -1,4 +1,4 @@
-package com.banhodobem.dobem.domain.repositorio;
+package com.banhodobem.dobem.domain.repository;
 
 import com.banhodobem.dobem.domain.entity.Pessoa;
 import org.springframework.data.jpa.repository.JpaRepository;

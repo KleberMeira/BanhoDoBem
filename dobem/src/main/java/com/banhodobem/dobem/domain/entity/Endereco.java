@@ -1,14 +1,37 @@
 package com.banhodobem.dobem.domain.entity;
 
+import javax.persistence.*;
+import java.util.List;
+
+@Entity
+@Table(name = "endereco")
 public class Endereco {
 
-
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "id")
     private Integer id;
+
+    @ManyToOne
+    @JoinColumn(name = "idPessoa" )
     private Pessoa idPessoa;
+
+    @OneToMany(mappedBy = "idInteresse")
+    private List<Interesse> interesses;
+
+    @Column(name = "cep", length = 20)
     private Integer cep;
+
+    @Column(name = "rua", length = 40)
     private String rua;
+
+    @Column(name = "bairro", length = 40)
     private String bairro;
+
+    @Column(name = "numero", length = 5)
     private Integer numero;
+
+    @Column(name = "condicaoMoradia", length = 20)
     private String codicaoMoradia;
 
     /*
@@ -76,4 +99,13 @@ public class Endereco {
     public void setCodicaoMoradia(String codicaoMoradia) {
         this.codicaoMoradia = codicaoMoradia;
     }
+
+    public List<Interesse> getInteresses() {
+        return interesses;
+    }
+
+    public void setInteresses(List<Interesse> interesses) {
+        this.interesses = interesses;
+    }
 }
+
