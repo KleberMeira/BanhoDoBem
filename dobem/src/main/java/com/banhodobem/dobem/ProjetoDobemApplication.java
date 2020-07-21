@@ -16,12 +16,42 @@ public class ProjetoDobemApplication {
 	@Bean
 	public CommandLineRunner init(@Autowired Pessoas pessoas){
 		return args -> {
+			System.out.println("Salvando Pessoas");
 			pessoas.salvar(new Pessoa("Kleber"));
 			pessoas.salvar(new Pessoa("Irmã"));
 
-			List<Pessoa> todasPessoas = pessoas.obeterTodos();
+
+			List<Pessoa> todasPessoas = pessoas.obterTodos();
 			todasPessoas.forEach(System.out::println);
+
+
+			System.out.println("Atualizando Pessoas");
+			todasPessoas.forEach(p -> {
+			p.setNome(p.getNome() + " atualizado.");
+			pessoas.atualizar(p);
+			});
+
+			System.out.println("Buscando Pessoas");
+			pessoas.buscarPorNome("mã").forEach(System.out::println);
+
+			System.out.println("Deletando Pessoas");
+			pessoas.obterTodos().forEach(p ->{
+				pessoas.deletar(p);
+			});
+
+			todasPessoas = pessoas.obterTodos();
+			if (todasPessoas.isEmpty()){
+				System.out.println("Nada encontrado");
+			}else {
+				todasPessoas.forEach(System.out::println);
+			}
+
+			todasPessoas = pessoas.obterTodos();
+			todasPessoas.forEach(System.out::println);
+
 		};
+
+
 
 	}
 

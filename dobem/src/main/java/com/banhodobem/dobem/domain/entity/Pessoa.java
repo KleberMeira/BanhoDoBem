@@ -1,21 +1,51 @@
 package com.banhodobem.dobem.domain.entity;
 
+import javax.persistence.*;
 import java.util.Date;
 
+@Entity
+@Table(name = "pessoa")
 public class Pessoa {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "id")
     private Integer id;
+
+    @Column(name = "idCadastro")
     private Integer idCadastro;
+
+    @Column(name = "nomeComunidade", length = 100)
     private String nomeComunidade;
+
+    @Column(name = "nome", length = 100)
     private String nome;
+
+    @Column(name = "dataNascimento")
     private Date dataNascimento;
+
+    @Column(name = "idade", length = 4)
     private Integer idade;
+
+    @Column(name = "aposentado", length = 5)
     private String aposentado;
+
+    @Column(name = "estadoCivil", length = 20)
     private String estadoCivil;
+
+    @Column(name = "numFilho", length = 5)
     private Integer numFilho;
+
+    @Column(name = "estadoNascimento", length = 20)
     private String estadoNascimento;
+
+    @Column(name = "telefone", length = 20)
     private Integer telefone;
+
+    @Column(name = "telRecado", length = 20)
     private Integer telRecado;
+
+    @Column(name = "respRecado", length = 100)
     private String respRecado;
 
     public Pessoa(Integer id, String nome) {
