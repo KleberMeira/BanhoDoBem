@@ -3,6 +3,7 @@ package com.banhodobem.dobem.domain.entity;
 import javax.persistence.*;
 import java.time.LocalDate;
 import java.util.Date;
+import java.util.List;
 import java.util.Set;
 
 @Entity
@@ -168,28 +169,31 @@ public class Pessoa {
     }
 
     @OneToMany(mappedBy = "idPessoaInteresse")
-    private Set<Interesse> interesses;
+    private List<Interesse> interesses;
 
     @OneToMany(mappedBy = "idPessoa")
-    private Set<Endereco> enderecos;
+    private List<Endereco> enderecos;
 
-    public Set<Interesse> getInteresses() {
+    public List<Interesse> getInteresses() {
         return interesses;
     }
 
-    public void setInteresses(Set<Interesse> interesses) {
+    public void setInteresses(List<Interesse> interesses) {
         this.interesses = interesses;
     }
 
-    public Set<Endereco> getEnderecos() {
+    public List<Endereco> getEnderecos() {
         return enderecos;
     }
 
-    public void setEnderecos(Set<Endereco> enderecos) {
+    public void setEnderecos(List<Endereco> enderecos) {
         this.enderecos = enderecos;
     }
 
-    /*
+
+
+
+/*
     id integer primary key auto_increment,
     idCadastro integer auto_increment,
     nomeComunidade varchar(100),

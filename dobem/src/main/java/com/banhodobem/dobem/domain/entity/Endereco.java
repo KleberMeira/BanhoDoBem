@@ -16,9 +16,6 @@ public class Endereco {
     @JoinColumn(name = "idPessoa" )
     private Pessoa idPessoa;
 
-    @OneToMany(mappedBy = "idInteresse")
-    private List<Interesse> interesses;
-
     @Column(name = "cep", length = 20)
     private Integer cep;
 
@@ -43,6 +40,10 @@ public class Endereco {
     numero integer(5),
     condicaoMoradia varchar (20)
     */
+
+    @OneToMany(mappedBy = "idEndereco")
+    private List<Interesse> interesses;
+
 
     public Integer getId() {
         return id;
@@ -100,12 +101,7 @@ public class Endereco {
         this.codicaoMoradia = codicaoMoradia;
     }
 
-    public List<Interesse> getInteresses() {
-        return interesses;
-    }
 
-    public void setInteresses(List<Interesse> interesses) {
-        this.interesses = interesses;
-    }
+
 }
 

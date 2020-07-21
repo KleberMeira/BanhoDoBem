@@ -16,7 +16,7 @@ public class Interesse {
     private Pessoa idPessoaInteresse;
 
     @ManyToOne
-    @JoinColumn(name = "idInteresse")
+    @JoinColumn(name = "idEndereco")
     private Endereco idEndereco;
 
     @Column(name = "palestra", length = 40)
