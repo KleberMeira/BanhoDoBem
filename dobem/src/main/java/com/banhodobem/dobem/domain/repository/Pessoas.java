@@ -18,11 +18,12 @@ public interface Pessoas extends JpaRepository<Pessoa, Integer> {
     @Modifying
     void deleteByNome(String nome);
 
-    //List<Pessoa> findByNomeLikeOrderById(String nome, Integer id);
-
-    //Pessoa findOneByCpf(String cpf);
-
     boolean existsByNome(String nome);
+
+    @Query(" select p from Pessoa p left join fetch p.enderecos where p.id = :id")
+    Pessoa findPessoaFetchEnderecos(@Param("id") Integer id);
+
+
 
 
 

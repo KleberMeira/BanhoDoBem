@@ -16,6 +16,9 @@ public class Endereco {
     @JoinColumn(name = "idPessoa" )
     private Pessoa idPessoa;
 
+    @Column(name = "nomeMorador")
+    private Pessoa nomeMorador;
+
     @Column(name = "cep", length = 20)
     private Integer cep;
 

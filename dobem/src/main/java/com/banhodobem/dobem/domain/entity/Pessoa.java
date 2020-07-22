@@ -171,7 +171,7 @@ public class Pessoa {
     @OneToMany(mappedBy = "idPessoaInteresse")
     private List<Interesse> interesses;
 
-    @OneToMany(mappedBy = "idPessoa")
+    @OneToMany(mappedBy = "idPessoa", fetch = FetchType.LAZY)
     private List<Endereco> enderecos;
 
     public List<Interesse> getInteresses() {
