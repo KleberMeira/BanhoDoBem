@@ -24,7 +24,7 @@ public class PessoaController {
     @GetMapping("/api/pessoas/{id}")
     @ResponseBody
     public ResponseEntity getPessoaById(@PathVariable Integer id){
-        //pessoas.findById(id);
+
         Optional<Pessoa> pessoa = pessoas.findById(id);
 
         if (pessoa.isPresent()){
