@@ -18,7 +18,7 @@ public class ProjetoDobemApplication {
 	@Bean
 	public CommandLineRunner init(
 			@Autowired Pessoas pessoas,
-			@Autowired Enderecos endereco
+			@Autowired Enderecos enderecos
 	){
 		return args -> {
 			System.out.println("Salvando Pessoas");
@@ -35,7 +35,7 @@ public class ProjetoDobemApplication {
 			e.setNumero(344);
 			e.setMorador(p1);
 
-			endereco.save(e);
+			enderecos.save(e);
 			System.out.println(" TUDO SALVO ");
 
 		/*
@@ -45,8 +45,7 @@ public class ProjetoDobemApplication {
 			System.out.println(pessoa.getEnderecos());
 			//result.forEach(System.out::println);
 		 */
-		//endereco.findByNomeMorador(p1).forEach(System.out::println);
-
+		enderecos.findByNomeMorador(p1).forEach(System.out::println);
 
 		};
 	}

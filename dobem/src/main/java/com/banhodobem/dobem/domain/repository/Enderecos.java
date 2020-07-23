@@ -9,7 +9,7 @@ import java.util.List;
 
 public interface Enderecos extends JpaRepository<Endereco, Integer> {
 
-    List<Pessoa> findByNomeMorador( Pessoa pessoa );
+    List<Endereco> findByNomeMorador( Pessoa pessoa );
 
 
 }
