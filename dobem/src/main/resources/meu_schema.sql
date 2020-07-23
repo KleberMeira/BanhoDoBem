@@ -18,7 +18,7 @@ CREATE TABLE PESSOA(
 CREATE TABLE ENDERECO(
 
  id integer primary key auto_increment,
- idPessoa integer references PESSOA(id),
+ nomeMorador varchar (60)references PESSOA(id),
  idInteresse integer references INTERESSE(id),
  cep integer(20),
  rua varchar (40),

@@ -168,19 +168,14 @@ public class Pessoa {
         this.respRecado = respRecado;
     }
 
+    /*
     @OneToMany(mappedBy = "idPessoaInteresse")
     private List<Interesse> interesses;
+     */
 
-    @OneToMany(mappedBy = "idPessoa", fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "nomeMorador", fetch = FetchType.LAZY)
     private List<Endereco> enderecos;
 
-    public List<Interesse> getInteresses() {
-        return interesses;
-    }
-
-    public void setInteresses(List<Interesse> interesses) {
-        this.interesses = interesses;
-    }
 
     public List<Endereco> getEnderecos() {
         return enderecos;
@@ -189,8 +184,6 @@ public class Pessoa {
     public void setEnderecos(List<Endereco> enderecos) {
         this.enderecos = enderecos;
     }
-
-
 
 
 /*

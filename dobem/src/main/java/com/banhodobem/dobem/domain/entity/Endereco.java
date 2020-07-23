@@ -12,11 +12,14 @@ public class Endereco {
     @Column(name = "id")
     private Integer id;
 
+    /*
     @ManyToOne
     @JoinColumn(name = "idPessoa" )
     private Pessoa idPessoa;
+     */
 
-    @Column(name = "nomeMorador")
+    @ManyToOne
+    @JoinColumn(name = "nomeMorador")
     private Pessoa nomeMorador;
 
     @Column(name = "cep", length = 20)
@@ -54,14 +57,6 @@ public class Endereco {
 
     public void setId(Integer id) {
         this.id = id;
-    }
-
-    public Pessoa getIdPessoa() {
-        return idPessoa;
-    }
-
-    public void setIdPessoa(Pessoa idPessoa) {
-        this.idPessoa = idPessoa;
     }
 
     public Integer getCep() {
@@ -104,7 +99,24 @@ public class Endereco {
         this.codicaoMoradia = codicaoMoradia;
     }
 
+    public Pessoa getNomemorador() {
+        return nomeMorador;
+    }
 
+    public void setMorador(Pessoa nomeMorador) {
+        this.nomeMorador = nomeMorador;
+    }
 
+    @Override
+    public String toString() {
+        return "Endereco{" +
+                "id=" + id +
+                ", cep=" + cep +
+                ", rua='" + rua + '\'' +
+                ", bairro='" + bairro + '\'' +
+                ", numero=" + numero +
+                ", codicaoMoradia='" + codicaoMoradia + '\'' +
+                '}';
+    }
 }
 
