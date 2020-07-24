@@ -11,6 +11,8 @@ import java.util.List;
 
 public interface Pessoas extends JpaRepository<Pessoa, Integer> {
 
+
+
     @Query(value = " select * from Pessoa p where p.nome like '%:nome%'", nativeQuery = true)
     List<Pessoa> encontrarPorNome( @Param("nome") String nome);
 
