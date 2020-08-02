@@ -1,5 +1,7 @@
 package com.banhodobem.dobem.domain.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import java.time.LocalDate;
 import java.util.Date;
@@ -168,6 +170,7 @@ public class Pessoa {
         this.respRecado = respRecado;
     }
 
+    @JsonIgnore
     @OneToMany(mappedBy = "nomeMorador", fetch = FetchType.LAZY)
     private List<Endereco> enderecos;
 

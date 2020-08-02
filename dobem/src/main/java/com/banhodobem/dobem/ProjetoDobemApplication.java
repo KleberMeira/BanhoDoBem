@@ -11,13 +11,6 @@ import org.springframework.context.annotation.Bean;
 @SpringBootApplication
 public class ProjetoDobemApplication {
 
-	@Bean
-	public CommandLineRunner commandLineRunner(@Autowired Pessoas pessoas){
-		return args -> {
-			Pessoa p = new Pessoa(null,"Kleber");
-			pessoas.save(p);
-		};
-	}
 
 	public static void main(String[] args) {
 		SpringApplication.run(ProjetoDobemApplication.class, args);
