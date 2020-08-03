@@ -10,11 +10,13 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.server.ResponseStatusException;
 
 import java.util.List;
 import java.util.Optional;
 
-@Controller
+@RestController
+@RequestMapping("/api/pessoas")
 //@RequestMapping("/api/pessoas")
 public class PessoaController {
 
@@ -24,55 +26,49 @@ public class PessoaController {
         this.pessoas = pessoas;
     }
 
-    @GetMapping("/api/pessoas/{id}")
-    @ResponseBody
-    public ResponseEntity getPessoaById(@PathVariable Integer id){
-
-        Optional<Pessoa> pessoa = pessoas.findById(id);
-
-        if (pessoa.isPresent()){
-            return ResponseEntity.ok( pessoa.get() );
-        }
-
-        return ResponseEntity.notFound().build();
-    }
-
-    @PostMapping("/api/pessoas")
-    @ResponseBody
-    public ResponseEntity save ( @RequestBody Pessoa pessoa ){
-        Pessoa pessoaSalva = pessoas.save(pessoa);
-        return ResponseEntity.ok(pessoaSalva);
-    }
-
-    @DeleteMapping("/api/pessoas/{id}")
-    @ResponseBody
-    public ResponseEntity delete(@PathVariable Integer id){
-        Optional<Pessoa> pessoa = pessoas.findById(id);
-
-        if (pessoa.isPresent()){
-            pessoas.delete(pessoa.get());
-            return ResponseEntity.noContent().build();
-        }
-        return ResponseEntity.notFound().build();
-    }
-
-    @PutMapping("/api/pessoas/{id}")
-    @ResponseBody
-    public ResponseEntity update( @PathVariable Integer id,
-                                  @RequestBody Pessoa pessoa){
+    @GetMapping("{id}")
+    public Pessoa getPessoaById(@PathVariable Integer id){
 
         return pessoas
+                .findById(id)
+                .orElseThrow(() ->
+                        new ResponseStatusException(HttpStatus.NOT_FOUND, "Pessoa não encontrada"));
+    }
+
+    @PostMapping
+    @ResponseStatus(HttpStatus.CREATED)
+    public Pessoa save ( @RequestBody Pessoa pessoa ){
+        return pessoas.save(pessoa);
+    }
+
+    @DeleteMapping("{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void delete(@PathVariable Integer id){
+        pessoas.findById(id)
+                .map(pessoa -> {
+                    pessoas.delete(pessoa);
+                    return pessoa;
+                })
+                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Pessoa não encontrada"));
+
+    }
+
+    @PutMapping("{id}")
+    public void update( @PathVariable Integer id,
+                                  @RequestBody Pessoa pessoa){
+
+        pessoas
                 .findById(id)
                 .map( pessoaExistente ->{
                     pessoa.setId(pessoaExistente.getId());
                     pessoas.save(pessoa);
-                    return ResponseEntity.noContent().build();
-                } ).orElseGet(() -> ResponseEntity.notFound().build() );
+                    return pessoaExistente;
+                } ).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Pessoa não encontrada"));
 
     }
 
-    @GetMapping("api/pessoas")
-    public ResponseEntity find(Pessoa filtro){
+    @GetMapping
+    public List<Pessoa> find(Pessoa filtro){
         ExampleMatcher matcher = ExampleMatcher
                                  .matching()
                                  .withIgnoreCase()
@@ -80,9 +76,7 @@ public class PessoaController {
                                          ExampleMatcher.StringMatcher.CONTAINING );
 
         Example example = Example.of(filtro, matcher);
-        List<Pessoa> lista = pessoas.findAll(example);
-
-        return ResponseEntity.ok(lista);
+        return pessoas.findAll(example);
     }
 
 
