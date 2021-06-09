@@ -4,6 +4,7 @@ const usuarioDao               = require ('./usuarios-dao')
 const { InvalidArgumentError } = require('../erros')
 const validacoes               = require ('../validacoes-comuns')
 const bcrypt                   = require('bcrypt')
+const usuariosDao = require('./usuarios-dao')
 
 class Usuario {
 
@@ -68,6 +69,16 @@ class Usuario {
         }
 
         return new Usuario(usuario)
+    }
+
+    async listarTodos(){
+        
+        try{
+            const usuario = await usuariosDao.lista();
+            return usuario;
+        }catch(error){
+            return error;
+        }
     }
 
     static async buscaPorEmail (email){

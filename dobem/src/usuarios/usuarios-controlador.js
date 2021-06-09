@@ -1,6 +1,7 @@
 ///Kleber Meira 27/03/2021
 
-const Usuario = require ('./usuarios-modelo')
+//import usuarioDao from '../usuarios/usuarios-dao'
+//const usuario = require ('./usuarios-modelo')
 const { InvalidArgumentError } = require ('../erros')
 const { adiciona } = require('./usuarios-dao')
 
@@ -37,15 +38,7 @@ module.exports = {
         
     },
 
-    //Listar todos usuários
-    async lista (req, res){
-        try{
-            const usuarios = await Usuario.lista()
-            res.json(usuarios)
-        }catch (erro){
-            res.status(500).json({erro: erro.message})
-        }
-    },
+
 
     async verificaEmail (req, res){
         try {
@@ -66,4 +59,15 @@ module.exports = {
             res.status(500).json({ erro: erro})
         }
     }
+}
+
+
+//Listar todos usuários
+exports.listaTodos = async (req, res) => {
+        try{
+            const usuarios = await usuarioDao.listaTodos()
+            res.json(usuarios)
+        }catch (erro){
+            res.status(500).json({erro: erro.message})
+        }
 }

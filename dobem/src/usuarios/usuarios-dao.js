@@ -1,20 +1,20 @@
 ///Kleber Meira 27/03/2021
 
 
-const db = require('../../database')
+const client = require('../config/database')
 const { InternalServerError } = require('../erros')
 
-const { promisify } = require('util')
-const dbRun = promisify(db.run).bind(db)
-const dbGet = promisify(db.get).bind(db)
-const dbAll = promisify(db.all).bind(db)
+//const { promisify } = require('util')
+//const dbRun = promisify(db.run).bind(db)
+//const dbGet = promisify(db.get).bind(db)
+//const dbAll = promisify(db.all).bind(db)
 
-module.exports = {
 
-    async adiciona (usuario) {
+
+exports.adiciona = async (usuario) => {
 
         try {
-            await dbRun(
+            await client.query(
 
                 `INSERT INTO usuarios (nome, email, senhaHash, emailVerificado, funcao)
                 VALUES (?, ?, ?, ?, ?)`,
@@ -30,35 +30,35 @@ module.exports = {
         } catch (erro){
             throw new InternalServerError('Erro ao adicionar o usuário!')
         }
-    },
+},
 
-    async buscaoPorId(id){
+exports.buscaoPorId = async (id) => {
         try{
-            return await dbGet('SELECT * FROM usuarios WHERE id = ?', [id])
+            return await client.query('SELECT * FROM usuarios WHERE id = ?', [id])
         }catch (erro){
             throw new InternalServerError('Não foi possivel encontrar o usuário!')
         }
-    },
+},
 
-    async buscaPorEmail (email){
+exports.buscaPorEmail = async (email) => {
         try{
-            return await dbGet('SELECT * FROM usuarios email = ?', [email])
+            return await client.query('SELECT * FROM usuarios email = ?', [email])
         }catch(erro){
             throw new InternalServerError('Não foi possivel encontrar o usuário!')
         }
-    },
+},
 
-    async lista (){
+exports.listaTodos = async() => {
         try{
-            return await dbAll('SELECT * FROM usuarios')
+            return await client.query('SELECT * FROM usuarios')
         }catch (erro){
             throw new InternalServerError('Erro ao listar usuários!')
         }
-    },
+},
 
-    async modificaEmailVerificado (usuario, emailVerificado){
+exports.modificaEmailVerificado = async(usuario, emailVerificado) => {
         try{
-            await dbRun('UPDATE usuarios SET emailVerificado = ?', [
+            await client.query('UPDATE usuarios SET emailVerificado = ?', [
                 emailVerificado,
                 usuario.id
             ])
@@ -67,12 +67,11 @@ module.exports = {
         }
     },
 
-    async deleta(usuario){
+exports.deleta = async(usuario) =>{
         try{
-            await dbRun('DELETE FROM usuarios WHERE id = ?', [usuario.id])
+            await client.query('DELETE FROM usuarios WHERE id = ?', [usuario.id])
         }catch (erro){
             throw new InternalServerError('Erro ao deletar usuário')
         }
     }
-}
 

@@ -7,6 +7,8 @@ const port = 3000
 
 //require('./database')
 
+const usuario = require('./src/usuarios/usuarios-rotas')
+
 //const routes = require ('./rotas')
 //routes(app)
 

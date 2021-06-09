@@ -1,13 +1,8 @@
 ///Kleber Meira 27/03/2021
 
 const usuarioControlador = require('./usuarios-controlador')
+const router = require('express-promise-router')();
 
-module.exports = app => {
+router.post('/usuario/listar', usuarioControlador.listarTodos)
 
-    app
-        .route('/usuario')
-        .post(usuarioControlador.adiciona)
-
-    app
-        .route('/usuario/:id')    
-}
+module.exports = router;
